@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "ng-krai"
+  "defaultProject": "ng-krai",
+  "cli": {
+    "analytics": "bf301158-5edd-4f0d-8330-eadef2fb5b0c"
+  }
 }

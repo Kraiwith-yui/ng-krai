@@ -1,21 +1,20 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { UserCreateComponent } from './components/user-create/user-create.component';
-import { UserTableComponent } from './components/user-table/user-table.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: UserTableComponent,
+    loadChildren: () => import(`./pages/home/home.module`).then(C => C.HomeModule),
   },
   {
-    path: 'create',
-    component: UserCreateComponent,
+    path: 'user',
+    loadChildren: () => import(`./pages/user/user.module`).then(C => C.UserModule),
   },
   {
-    path: 'update/:id',
-    component: UserCreateComponent,
+    path: 'profile',
+    loadChildren: () => import(`./pages/profile/profile.module`).then(C => C.ProfileModule),
   },
+  { path: '**', redirectTo: '', pathMatch: 'full', }
 ];
 
 @NgModule({

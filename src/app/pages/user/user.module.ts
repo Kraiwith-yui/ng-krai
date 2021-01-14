@@ -5,7 +5,7 @@ import { UserRoutingModule } from './user-routing.module';
 import { UserComponent } from './user.component';
 import { UserCreateComponent } from './pages/user-create/user-create.component';
 import { UserTableComponent } from './pages/user-table/user-table.component';
-import { UserUpdateComponent } from './pages/user-update/user-update.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -13,11 +13,11 @@ import { UserUpdateComponent } from './pages/user-update/user-update.component';
     UserComponent,
     UserCreateComponent,
     UserTableComponent,
-    UserUpdateComponent,
   ],
   imports: [
     CommonModule,
-    UserRoutingModule
+    UserRoutingModule,
+    SharedModule,
   ]
 })
 export class UserModule { }

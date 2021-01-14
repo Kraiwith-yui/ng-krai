@@ -18,14 +18,14 @@ export class UserService {
       return users.map((user, i) => ({ ...user, index: i }));
     }));
   }
-  getUserById(user: User) {
-    return this.http.get<User>(`${API}users/${user.id}`);
+  getUserById(userId: number) {
+    return this.http.get<User>(`${API}users/${userId}`);
   }
   postUser(user: User) {
-    return this.http.post(`${API}users`, user)
+    return this.http.post<User>(`${API}users`, user)
   }
-  putUser(user: User) {
-    return this.http.put(`${API}users/${user.id}`, user)
+  putUser(userId: number, user: User) {
+    return this.http.put<User>(`${API}users/${userId}`, user)
   }
   deleteUser(user: User) {
     return this.http.delete<User[]>(`${API}users/${user.id}`);

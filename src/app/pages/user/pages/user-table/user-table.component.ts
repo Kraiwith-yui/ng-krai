@@ -24,7 +24,7 @@ export class UserTableComponent implements OnInit {
   }
 
   getUsers() {
-    this.svUser.getUsers().subscribe(response => {
+    this.svUser.getUsers().pipe().subscribe(response => {
       this.users = response;
       console.log(`🚀 ~ this.users`, this.users);
     });

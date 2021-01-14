@@ -1,7 +1,8 @@
 export interface User {
-  index: number;
-  id: string;
-  createdAt: string;
+  id?: string;
   name: string;
-  avatar: any;
+  avatar?: any;
+  createdAt?: string;
+
+  index?: number;
 }
